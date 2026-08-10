@@ -1,0 +1,85 @@
+.offline-sync-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #6b7280; /* synced/neutral: gray */
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.offline-sync-icon--offline {
+  color: #ef4444; /* red */
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.offline-sync-icon--reconnecting {
+  color: #22c55e; /* green */
+  animation: sync-pulse 1s ease-in-out infinite;
+}
+
+.offline-sync-icon--synced {
+  color: #9ca3af;
+}
+
+.offline-sync-icon__svg {
+  display: block;
+}
+
+.offline-sync-icon__badge {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid #ffffff;
+}
+
+.offline-sync-icon--reconnecting .offline-sync-icon__badge {
+  background: #22c55e;
+}
+
+.offline-sync-icon__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes sync-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.12);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile-first: slightly smaller hit target on very narrow viewports */
+@media (max-width: 360px) {
+  .offline-sync-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
