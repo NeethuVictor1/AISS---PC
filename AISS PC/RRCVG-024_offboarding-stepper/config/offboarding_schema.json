@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "workflowMetadata": {
+    "workflowId": "WF-OFFBOARDING-BINARY-V1",
+    "domainOwner": "HRE & Security Operations",
+    "complianceFrameworks": ["SOC2_TYPE_II", "ISO27001"],
+    "dcdfStatus": "DCDF_VERIFIED",
+    "tkiCompliant": true
+  },
+  "offboardingItems": [
+    {
+      "stepOrder": 1,
+      "stepId": "IAM-001",
+      "systemName": "Primary Identity Provider (Okta)",
+      "category": "Identity & Access",
+      "riskLevel": "CRITICAL",
+      "revocationType": "AUTOMATED_API",
+      "endpoint": "/api/v1/iam/revoke-sso",
+      "description": "Suspend primary SSO account and terminate all active sessions immediately."
+    },
+    {
+      "stepOrder": 2,
+      "stepId": "INFRA-002",
+      "systemName": "AWS Cloud Infrastructure",
+      "category": "Infrastructure Access",
+      "riskLevel": "CRITICAL",
+      "revocationType": "AUTOMATED_API",
+      "endpoint": "/api/v1/cloud/detach-policies",
+      "description": "Revoke IAM roles, delete active access keys, and clear SSH authorization."
+    },
+    {
+      "stepOrder": 3,
+      "stepId": "DEV-003",
+      "systemName": "GitHub Organization",
+      "category": "Engineering",
+      "riskLevel": "HIGH",
+      "revocationType": "AUTOMATED_API",
+      "endpoint": "/api/v1/github/remove-org-member",
+      "description": "Remove user from company organization and revoke private repository access."
+    },
+    {
+      "stepOrder": 4,
+      "stepId": "COMM-004",
+      "systemName": "Slack Workspace",
+      "category": "Productivity",
+      "riskLevel": "HIGH",
+      "revocationType": "AUTOMATED_API",
+      "endpoint": "/api/v1/comms/deactivate-account",
+      "description": "Deactivate user workspace account and archive private channel memberships."
+    },
+    {
+      "stepOrder": 5,
+      "stepId": "FAC-005",
+      "systemName": "Physical Keycard & Badge",
+      "category": "Facilities",
+      "riskLevel": "MEDIUM",
+      "revocationType": "MANUAL_ATTESTATION",
+      "endpoint": "/api/v1/facilities/attest-badge-return",
+      "description": "Verify physical security badge has been collected and deactivated in console."
+    }
+  ],
+  "completionPolicy": {
+    "requireAllPass": true,
+    "allowBypass": false,
+    "onFailureAction": "FLAG_ACTIVE_RISK",
+    "auditTarget": "GCP_BIGQUERY_SECURITY_LOGS"
+  }
+}
