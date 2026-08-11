@@ -1,0 +1,25 @@
+{
+  "task_id": "SGTIM-019-A01",
+  "layout_type": "adaptive_circular_shortcut",
+  "material_design_profile": "56x56dp",
+  "grid_dimensions": {
+    "width": "56dp",
+    "height": "56dp",
+    "border_radius": "50%"
+  },
+  "spacing_rules": {
+    "bottom_margin": "16dp",
+    "right_margin": "16dp",
+    "padding": "16dp"
+  },
+  "alignment_settings": {
+    "position": "fixed",
+    "bottom": "16px",
+    "right": "16px",
+    "z_index": 1000
+  },
+  "poka_yoke_rules": {
+    "hide_on_unauthorized": true,
+    "collapse_on_blur": true
+  }
+}
