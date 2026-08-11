@@ -1,0 +1,19 @@
+{
+  "name": "irbca-055-access-matrix",
+  "version": "1.0.0",
+  "description": "Automated access mapping matrix module for HABOT Connect DMCC",
+  "scripts": {
+    "build": "tsc",
+    "start": "uvicorn backend.app.main:app --reload",
+    "qa": "python qa/qa_validation.py"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
+}

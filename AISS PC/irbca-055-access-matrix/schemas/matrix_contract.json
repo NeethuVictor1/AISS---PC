@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AccessMatrixBindingContract",
+  "type": "object",
+  "required": [
+    "tenantId",
+    "userId",
+    "matrixDimensions",
+    "matrixValues",
+    "matrixType",
+    "matrixStatus"
+  ],
+  "properties": {
+    "tenantId": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "matrixDimensions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "matrixValues": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string"
+        },
+        "spendingLimit": {
+          "type": "number"
+        },
+        "approvalThreshold": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "level",
+        "spendingLimit",
+        "approvalThreshold"
+      ]
+    },
+    "matrixType": {
+      "type": "string"
+    },
+    "matrixStatus": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "SUSPENDED",
+        "PENDING_REVIEW"
+      ]
+    }
+  }
+}
