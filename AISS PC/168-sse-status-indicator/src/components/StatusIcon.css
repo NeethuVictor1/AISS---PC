@@ -1,0 +1,44 @@
+:root {
+  --md-sys-color-success: #0F5257;
+  --md-sys-color-warning: #7D5260;
+  --md-sys-color-error: #B3261E;
+  --md-sys-color-default: #79747E;
+}
+
+.status-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.status-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.status-icon.success {
+  background-color: var(--md-sys-color-success);
+}
+
+.status-icon.warning {
+  background-color: var(--md-sys-color-warning);
+  animation: pulse 1.5s infinite;
+}
+
+.status-icon.error {
+  background-color: var(--md-sys-color-error);
+}
+
+.status-icon.idle {
+  background-color: var(--md-sys-color-default);
+}
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.15); }
+  100% { opacity: 1; transform: scale(1); }
+}

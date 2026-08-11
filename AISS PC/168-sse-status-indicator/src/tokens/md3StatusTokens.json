@@ -1,0 +1,27 @@
+{
+  "$schema": "https://material.io/schemas/md3-tokens.json",
+  "name": "MD3 Status Color Tokens",
+  "tokens": {
+    "success": {
+      "colorName": "md.sys.color.success",
+      "hex": "#0F5257",
+      "rgb": "rgb(15, 82, 87)",
+      "contrastRatio": 7.12,
+      "applicationMap": "SSE Connected"
+    },
+    "warning": {
+      "colorName": "md.sys.color.warning",
+      "hex": "#7D5260",
+      "rgb": "rgb(125, 82, 96)",
+      "contrastRatio": 4.85,
+      "applicationMap": "SSE Reconnecting"
+    },
+    "error": {
+      "colorName": "md.sys.color.error",
+      "hex": "#B3261E",
+      "rgb": "rgb(179, 38, 30)",
+      "contrastRatio": 5.84,
+      "applicationMap": "SSE Disconnected / Error"
+    }
+  }
+}
