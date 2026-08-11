@@ -1,0 +1,22 @@
+{
+  "system_name": "HabotConnect DMCC Core Design System",
+  "system_version": "v13.15.0",
+  "component_list": [
+    "FloatingCalloutOverlay",
+    "ElevationContainer",
+    "BorderAlertFrame"
+  ],
+  "token_values": {
+    "canvas_sprawl_limit": "480px",
+    "elevation_tokens": "var(--md-sys-elevation-3)",
+    "fluid_width": "clamp(300px, 80vw, 600px)",
+    "border_accents": "1px solid var(--md-sys-color-outline-variant)"
+  },
+  "documentation_links": [
+    "https://design.habotconnect.dmcc/overlays/floating-callout"
+  ],
+  "system_configuration_details": {
+    "z_index": 1200,
+    "mobile_first": true
+  }
+}
